@@ -1,0 +1,10 @@
+migration: save history in database
+_init.py: empty to init project
+admin.py: Register your model to show
+apps.py: define app configure
+models.py: create model
+test.py: write test case
+views.py: show interface
+
+When you create app in polls, you must register on mysite/settings.py
+

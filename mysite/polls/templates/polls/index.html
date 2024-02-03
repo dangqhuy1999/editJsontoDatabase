@@ -1,0 +1,11 @@
+{% extends 'polls/base.html' %}
+{% block content %}
+		Hello you guys TEMPLATES. My name is <b>{{name}}</b><h2> hihihi</h2>
+		<ul>
+			{% for item in asset %}
+				{% if item != 5 %}
+					<li>{{item}}</li>
+				{% endif %}
+			{% endfor %}
+		</ul>
+{% endblock %}
