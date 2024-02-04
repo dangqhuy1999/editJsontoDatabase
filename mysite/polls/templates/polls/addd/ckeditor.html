@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script> 
+</head>
+<body>
+    <textarea id="editor"></textarea>
+    <div id="content1">
+        <p id="question1">Câu 1: Một chất điêm chuyển động thẳng đêu, với đồ thị vận tốc - thời gian được cho như hình vẽ. ![original image](https://cdn.mathpix.com/snip/images/ChLIECR1_i77DC5RUDYbTDMXlPyC9AYPzkVmVe_nNjI.original.fullsize.png) Quãng đường mà chất điểm đi được trong khoảng thời gian từ $1 \mathrm{~s}$ đến $2 \mathrm{~s}$ là:</p>
+        <button onclick="setEditorDataFromDiv1()">Get Editor Data</button>
+    </div>
+    <div id="content2">
+        Câu hỏi 2: cái gì vậy???
+        A B C D
+        <button onclick="setEditorDataFromDiv2()">Get Editor Data</button>
+    </div>
+    <div id="content3">
+        Câu hỏi 3: cái gì vậy???
+        A B C D
+        <button onclick="setEditorDataFromDiv3()">Get Editor Data</button>
+    </div>
+    <div id="content4">
+        Câu hỏi 4: cái gì vậy???
+        A B C D
+        <button onclick="setEditorDataFromDiv4()">Get Editor Data</button>
+    </div>
+    <script>
+    ClassicEditor
+        .create(document.querySelector('#editor'))
+        .then(editor => {
+            // Button "Get Data" click event
+			
+            window.getEditorData = function() {
+                const data = editor.getData();
+                return data;
+            };
+			window.setEditorData = function(data) {
+				editor.setData(data);
+			};
+        })
+        .catch(error => {
+            console.error(error);
+        });
+        function setEditorDataFromDiv1() {
+            const jsonFile = 'cnv_2022_12_20_c5f712dbd100f70bdfcfg_de-so-1.json'; // Tên tệp JSON tương ứng với div
+            const questionElement = document.querySelector('#question1');
+            // Đọc và trích xuất thông tin từ tệp JSON
+            fetch('jsonFile/')
+                .then(response => response.json())
+                .then(data => {
+                    const question = data.Object.details[0].Content; // Giả sử "question" là trường chứa nội dung câu hỏi trong file JSON
+                    questionElement.textContent = question;
+                    window.setEditorData(question);
+                    //console.log(`Set Editor Data from div ${divNumber}`);
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+        }
+        function setEditorDataFromDiv2() {
+            const divContent = document.querySelector('#content2').childNodes[0].textContent.trim();
+            window.setEditorData(divContent);
+        }
+        function setEditorDataFromDiv3() {
+            const divContent = document.querySelector('#content3').childNodes[0].textContent.trim();
+            window.setEditorData(divContent);
+        }
+        function setEditorDataFromDiv4() {
+            const divContent = document.querySelector('#content4').childNodes[0].textContent.trim();
+            window.setEditorData(divContent);
+        }
+        function setEditorDataToDiv1() {
+            const editorData = window.getEditorData();
+            const divContent = document.querySelector('#question1');
+            divContent.textContent = stripHTML(editorData.trim());
+            
+            const jsonFile = 'cnv_2022_12_20_c5f712dbd100f70bdfcfg_de-so-1.json'; // Tên tệp JSON tương ứng với div
+            // Đọc và cập nhật thông tin từ tệp JSON
+            fetch(jsonFile)
+                .then(response => response.json())
+                .then(data => {
+                    data.Object.details[0].Content = editorData; // Giả sử "question" là trường chứa nội dung câu hỏi trong file JSON
+                    return fetch(jsonFile, {
+                        method: 'PUT', // Sử dụng phương thức PUT để cập nhật tệp JSON
+                        body: JSON.stringify(data),
+                        headers: {
+                            'Content-Type': 'application/json'
+                        }
+                    });
+                })
+                .then(response => {
+                    if (response.ok) {
+                        console.log(`Saved Editor Data to JSON for div`);
+                    } else {
+                        console.error(`Failed to save Editor Data to JSON for div `);
+                    }
+                })
+                .catch(error => {
+                    console.error(error);
+                });
+
+        }
+
+        function setEditorDataToDiv2() {
+            const editorData = window.getEditorData();
+            const divContent = document.querySelector('#content2');
+            divContent.childNodes[0].textContent = stripHTML(editorData.trim());
+        }
+        function setEditorDataToDiv3() {
+            const editorData = window.getEditorData();
+            const divContent = document.querySelector('#content3');
+            divContent.childNodes[0].textContent = stripHTML(editorData.trim());
+        }
+        function setEditorDataToDiv4() {
+            const editorData = window.getEditorData();
+            const divContent = document.querySelector('#content4');
+            divContent.childNodes[0].textContent = stripHTML(editorData.trim());
+        }
+
+        function stripHTML(html) {
+            var doc = new DOMParser().parseFromString(html, 'text/html');
+            return doc.body.textContent || "";
+        }
+    </script>
+</body>
+</html>

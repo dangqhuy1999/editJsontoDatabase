@@ -115,7 +115,131 @@ https://www.rosehosting.com/blog/how-to-create-a-python-virtual-environment-on-u
 
 7.Template part 3:
 	Query objects: get elements in database print to views
-	
-	
-	 
-	
+	diango 2.2 => django 5.0.1 
+	INSTALLED_APPS = [
+    # ...
+    'corsheaders',
+    # ...
+]
+Thêm middleware CorsMiddleware vào danh sách MIDDLEWARE trong tệp settings.py:
+python
+Copier
+MIDDLEWARE = [
+    # ...
+    'corsheaders.middleware.CorsMiddleware',
+    # ...
+]
+Cấu hình các thiết lập CORS bằng cách thêm các cài đặt sau vào tệp settings.py:
+python
+Copier
+CORS_ALLOWED_ORIGINS = [
+    'http://127.0.0.1:8000',
+]
+Bạn có thể thay đổi giá trị 'http://127.0.0.1:8000' bằng nguồn gốc (origin) của trang web của bạn.
+
+Nếu bạn cần cho phép các phương thức HTTP khác nhau, như PUT, DELETE, PATCH, vv., bạn có thể thêm các thiết lập CORS sau:
+python
+Copier
+CORS_ALLOW_METHODS = [
+    'GET',
+    'POST',
+    'PUT',
+    'PATCH',
+    'DELETE',
+    'OPTIONS'
+]
+Khởi động lại máy chủ Django để áp dụng các thay đổi.
+
+############
+ĐỂ CẤU HÌNH URL VÀ VIEW TRONG DJANGO ĐỂ SỬ DỤNG FETCH VÀ GỌI MỘT URL CÓ CHỨA TỆP JSON, BẠN CÓ THỂ LÀM NHƯ SAU:
+ 
+	Để cấu hình URL và view trong Django để sử dụng fetch và gọi một URL có chứa tệp JSON, bạn có thể làm như sau:
+
+	Cấu hình URL:
+
+	Trong file urls.py của ứng dụng Django, thêm một đường dẫn (URL pattern) để ánh xạ yêu cầu từ JavaScript đến view tương ứng. Ví dụ:
+	python
+	Copier
+	from django.urls import path
+	from . import views
+
+	urlpatterns = [
+		path('my-json-data/', views.my_json_data_view, name='my-json-data'),
+	]
+	Trong ví dụ trên, /my-json-data/ là đường dẫn URL mà bạn muốn gọi từ JavaScript để lấy dữ liệu JSON.
+
+	Cấu hình view:
+
+	Trong file views.py của ứng dụng Django, định nghĩa view để xử lý yêu cầu và trả về dữ liệu JSON. Ví dụ:
+	python
+	Copier
+	from django.http import JsonResponse
+
+	def my_json_data_view(request):
+		data = {
+			'name': 'John',
+			'age': 25,
+			'city': 'New York'
+		}
+		return JsonResponse(data)
+	Trong ví dụ trên, my_json_data_view là tên view được gọi khi yêu cầu đến URL /my-json-data/. Trong view này, chúng ta định nghĩa một đối tượng JSON data và trả về dữ liệu JSON bằng phương thức JsonResponse.
+
+	Sử dụng fetch trong JavaScript:
+
+	Trong mã JavaScript, bạn có thể sử dụng fetch để gọi URL /my-json-data/ và nhận dữ liệu JSON từ server. Ví dụ:
+	javascript
+	Copier
+	fetch('/my-json-data/')
+		.then(response => response.json())
+		.then(data => {
+			// Xử lý dữ liệu JSON ở đây
+			console.log(data);
+		})
+		.catch(error => {
+			// Xử lý lỗi ở đây
+			console.error(error);
+		});
+	Trong ví dụ trên, chúng ta sử dụng fetch để gửi yêu cầu GET đến URL /my-json-data/. Sau đó, chúng ta chuyển đổi phản hồi thành đối tượng JSON bằng phương thức json(). Cuối cùng, chúng ta xử lý dữ liệu JSON hoặc xử lý lỗi nếu có.
+
+################
+AH, NẾU BẠN ĐANG MUỐN XỬ LÝ URL VỚI MỐI QUAN HỆ CHA-CON TRONG DJANGO, BẠN CÓ THỂ SỬ DỤNG CÁC URL PATTERNS ĐỂ XÁC ĐỊNH CÁC MẪU URL CON THEO CẤU TRÚC PHÂN CẤP. DƯỚI ĐÂY LÀ MỘT VÍ DỤ ĐỂ GIÚP BẠN HIỂU RÕ HƠN:
+	Trong file urls.py của ứng dụng Django của bạn, bạn cần import module include từ django.urls.
+
+	python
+	Copier
+	from django.urls import path, include
+	Tiếp theo, bạn có thể tạo ra các URL patterns cho các view con trong ứng dụng của bạn.
+
+	python
+	Copier
+	urlpatterns = [
+		path('parent/', include([
+			path('', views.parent_view, name='parent'),
+			path('child/', views.child_view, name='child'),
+		])),
+	]
+	Trong ví dụ trên, chúng ta định nghĩa một URL pattern với đường dẫn 'parent/'. Đường dẫn này sẽ là cha của các URL con. Bên trong include(), chúng ta định nghĩa hai URL patterns khác nhau: một cho view cha parent_view với đường dẫn rỗng (''), và một cho view con child_view với đường dẫn 'child/'. Điều này tạo ra một cấu trúc URL phân cấp với URL cha là 'parent/' và URL con là 'parent/child/'.
+
+	Trong views của bạn, bạn có thể định nghĩa các view tương ứng với các URL patterns.
+
+	python
+	Copier
+	def parent_view(request):
+		# Xử lý logic cho view cha ở đây
+		return HttpResponse("This is the parent view")
+
+	def child_view(request):
+		# Xử lý logic cho view con ở đây
+		return HttpResponse("This is the child view")
+	Trong ví dụ trên, chúng ta đơn giản chỉ trả về một phản hồi văn bản cho mỗi view.
+
+	Bây giờ, khi bạn truy cập vào URL 'parent/', Django sẽ gọi view parent_view và trả về phản hồi "This is the parent view". Tương tự, khi bạn truy cập vào URL 'parent/child/', Django sẽ gọi view child_view và trả về phản hồi "This is the child view".
+
+#####################
+SETTING CKEDITOR UPLOAD IMAGES
+	settings.py
+	CKEDITOR_UPLOAD_PATH = "uploads/"
+	STATIC_URL = '/static/'
+	STATIC_ROOT = 'static/'
+	MEDIA_URL = '/media/'
+	MEDIA_ROOT = 'media/'

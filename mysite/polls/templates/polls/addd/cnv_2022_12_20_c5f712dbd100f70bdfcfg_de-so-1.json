@@ -1,0 +1,578 @@
+{
+    "ID": null,
+    "SubjectName": "",
+    "Title": "",
+    "ExamName": "cnv_2022_12_20_c5f712dbd100f70bdfcfg1",
+    "Error": false,
+    "Object": {
+        "isAlreadyDone": false,
+        "details": [
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 1: M\u1ed9t ch\u1ea5t \u0111i\u00eam chuy\u1ec3n \u0111\u1ed9ng th\u1eb3ng \u0111\u00eau, v\u1edbi \u0111\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian \u0111\u01b0\u1ee3c cho nh\u01b0 h\u00ecnh v\u1ebd. \n![original image](https://cdn.mathpix.com/snip/images/ChLIECR1_i77DC5RUDYbTDMXlPyC9AYPzkVmVe_nNjI.original.fullsize.png)\nQu\u00e3ng \u0111\u01b0\u1eddng m\u00e0 ch\u1ea5t \u0111i\u1ec3m \u0111i \u0111\u01b0\u1ee3c trong kho\u1ea3ng th\u1eddi gian t\u1eeb $1 \\mathrm{~s}$ \u0111\u1ebfn $2 \\mathrm{~s}$ l\u00e0:",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "f427784d-3522-475a-8f19-fde186cbfd41",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "43edda99-cb16-4206-a0c4-8b32da4ab674",
+                        "Answer": "A. $1 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $1 \\mathrm{~m}$.",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "181fad4d-e367-4a9b-80ab-30325adb688d",
+                        "Answer": "B. $2 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $2 \\mathrm{~m}$.",
+                        "IsAnswer": true
+                    },
+                    {
+                        "Code": "a8394536-3662-478e-b768-2ce2c072dbb7",
+                        "Answer": "C. $3 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $3 \\mathrm{~m}$.",
+                        "IsAnswer": true
+                    },
+                    {
+                        "Code": "25179166-f58f-40af-a9e7-8dcd493eb0f1",
+                        "Answer": "D. $4 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $4 \\mathrm{~m}$.",
+                        "IsAnswer": false
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            },
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 2: V\u00e0o l\u00fac $8 \\mathrm{~h}$ t\u1ea1i hai \u0111i\u1ec3m $\\mathrm{AB}$ c\u00e1ch nhau $100 \\mathrm{~m}$, c\u00f3 hai ch\u1ea5t \u0111i\u1ec3m chuy\u1ec3n \u0111\u1ed9ng ng\u01b0\u1ee3c chi\u1ec1u nhau \u0111i qua $\\mathrm{A}, \\mathrm{B}$. \u0110\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian c\u1ee7a hai ch\u1ea5t \u0111i\u1ec3m \u0111\u01b0\u1ee3c bi\u1ec3u di\u1ec5n nh\u01b0 h\u00ecnh v\u1ebd.\n<img src=\"https://admin.metalearn.vn//uploads/repository/SUBJECT/GpPxvhPlrO0HGeROO3gVBQ5kSlllZf4VFu0D1OZemaU_original_fullsize.png\" >\nTh\u1eddi gian \u0111\u1ec3 hai ch\u1ea5t \u0111i\u1ec3m n\u00e0y g\u1eb7p nhau l\u00e0:",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "8af52800-a90e-4793-9ce3-a49ee273d56f",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "ea5a6fd3-4712-44ae-8469-7b8a8a0dbdf2",
+                        "Answer": "A. $4 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $4 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "05ab646c-c81a-4b08-97b0-ea6a206fb7a2",
+                        "Answer": "B. $2 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $2 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "3bc01db1-ff05-4baa-853d-f49ee1d3d7bd",
+                        "Answer": "C. $3 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $3 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "08f73809-d548-4df2-a47f-5fb62cb4033a",
+                        "Answer": "D. $2,5 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $2,5 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": true
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            },
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 3: M\u1ed9t ch\u1ea5t \u0111i\u1ec1m chuy\u1ec3n \u0111\u1ed9ng th\u1eb3ng \u0111\u1ec1u, v\u1edbi \u0111\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian \u0111\u01b0\u1ee3c cho nh\u01b0 h\u00ecnh v\u1ebd. Qu\u00e3ng \u0111\u01b0\u1eddng m\u00e0 ch\u1ea5t \u0111i\u1ec3m \u0111i \u0111\u01b0\u1ee3c trong kho\u1ea3ng th\u1eddi gian t\u1eeb $1 \\mathrm{~s}$ \u0111\u1ebfn $2 \\mathrm{~s}$ l\u00e0:\n<img src=\"https://admin.metalearn.vn//uploads/repository/SUBJECT/q_wEOc-8-nPPSIOENYTGOQpvzUaJVDVNe7SM9DOqT4A_original_fullsize.png\" >",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "b73a4ece-f783-4866-a2a6-5cc762386668",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "da5d9bdf-570c-492c-9a53-45aa5e05eff5",
+                        "Answer": "A. $1 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $1 \\mathrm{~m}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "77baeb3f-4402-4627-a29c-04e83222a169",
+                        "Answer": "B. $2 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $2 \\mathrm{~m}$.\\\\",
+                        "IsAnswer": true
+                    },
+                    {
+                        "Code": "a8217680-c94a-4afa-ac86-ed194c72ca4f",
+                        "Answer": "C. $3 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $3 \\mathrm{~m}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "efe20fe4-c18e-490d-b5a6-94e3bc1d9ef3",
+                        "Answer": "D. $4 \\mathrm{~m}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $4 \\mathrm{~m}$.\\\\",
+                        "IsAnswer": false
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            },
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 4: V\u00e0o l\u00fac $8 \\mathrm{~h}$ t\u1ea1i hai \u0111i\u1ec3m $\\mathrm{AB}$ c\u00e1ch nhau $100 \\mathrm{~m}$, c\u00f3 hai ch\u1ea5t \u0111i\u1ec3m chuy\u1ec3n \u0111\u1ed9ng ng\u01b0\u1ee3c chi\u1ec1u nhau \u0111i qua $\\mathrm{A}, \\mathrm{B}$. \u0110\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian c\u1ee7a hai ch\u1ea5t \u0111i\u1ec3m \u0111\u01b0\u1ee3c bi\u1ec3u di\u1ec5n nh\u01b0 h\u00ecnh v\u1ebd. Th\u1eddi gian \u0111\u1ec3 hai ch\u1ea5t \u0111i\u1ec3m n\u00e0y g\u1eb7p nhau l\u00e0:\n<img src=\"https://admin.metalearn.vn//uploads/repository/SUBJECT/RvQ_hKxYGV7jgObHbhiF9moLQTu5r6dgPAQmPDrc4S8_original_fullsize.png\" >",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "0abbe6c3-b8af-435f-b4a7-c5deed0204f6",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "020a51b9-2c07-40af-a0c3-dc2726a535ad",
+                        "Answer": "A. $4 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $4 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "c7b6cb76-6c57-48ad-bab1-d2922396acbc",
+                        "Answer": "B. $2 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $2 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "84d1d7bc-2835-477b-934b-3623a9e20a57",
+                        "Answer": "C. $3 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $3 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "82c0676f-cb57-40be-954e-81884dfa8d9c",
+                        "Answer": "D. $2,5 \\mathrm{~s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $2,5 \\mathrm{~s}$.\\\\",
+                        "IsAnswer": true
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            },
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 5: M\u1ed9t ch\u1ea5t \u0111i\u1ec3m chuy\u1ec3n \u0111\u1ed9ng th\u0103ng bi\u1ebfn \u0111\u1ed5i \u0111\u1ec1u c\u00f3 \u0111\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian nh\u01b0 h\u00ecnh v\u1ebd.\n<img src=\"https://admin.metalearn.vn//uploads/repository/SUBJECT/5o_PocTB177u1RUpV1bFIX4UR6QI4GYOISDTdpJtLg4_original_fullsize.png\" >\nGia t\u1ed1c c\u1ee7a chuy\u1ec3n \u0111\u1ed9ng l\u00e0:",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "6eb0b10c-5f89-4112-8ee5-5705b250df79",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "e6f57250-ed03-4032-a0c9-1e99faa111a4",
+                        "Answer": "A. $-4 \\mathrm{~m} / \\mathrm{s}^2$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $-4 \\mathrm{~m} / \\mathrm{s}^2$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "454f65d7-2c9c-41c3-8a6a-f75e4831662e",
+                        "Answer": "B. $-1 \\mathrm{~m} / \\mathrm{s}^2$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $-1 \\mathrm{~m} / \\mathrm{s}^2$.\\\\",
+                        "IsAnswer": true
+                    },
+                    {
+                        "Code": "9ac1e952-e87d-41f4-b6e9-8100c684c16d",
+                        "Answer": "C. $3 \\mathrm{~m} / \\mathrm{s}^2$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $3 \\mathrm{~m} / \\mathrm{s}^2$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "f9569b08-f50c-40fe-ae10-6e462d3dbc06",
+                        "Answer": "D. $2,5 \\mathrm{~m} / \\mathrm{s}^2$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $2,5 \\mathrm{~m} / \\mathrm{s}^2$.\\\\",
+                        "IsAnswer": false
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            },
+            {
+                "Id": 1,
+                "Order": "",
+                "Duration": 10,
+                "Unit": "MINUTE",
+                "Mark": 10,
+                "Content": "C\u00e2u 6: M\u1ed9t ch\u1ea5t \u0111i\u1ec3m chuy\u1ec3n \u0111\u1ed9ng th\u0103ng bi\u1ebfn \u0111\u1ed3i \u0111\u1ec1u c\u00f3 \u0111\u1ed3 th\u1ecb v\u1eadn t\u1ed1c - th\u1eddi gian nh\u01b0 h\u00ecnh v\u1ebd.\n<img src=\"https://admin.metalearn.vn//uploads/repository/SUBJECT/zO6I_r2e1ZBWnULe39rB5_87wJ4XLizxL5Yp9oLU-BE_original_fullsize.png\" >\nBi\u1ebft r\u1eb3ng v\u1eadt \u0111\u1ed5i chi\u1ec1u chuy\u1ec3n \u0111\u1ed9ng t\u1ea1i th\u1eddi \u0111i\u1ec3m $\\mathrm{t}=4 \\mathrm{~s}$, v\u1eadn t\u1ed1c c\u1ee7a v\u1eadt t\u1ea1i $\\mathrm{t}=2 \\mathrm{~s}$ l\u00e0:\nB\u00c0I T\u1eacP V\u1eacN D\u1ee4NG",
+                "Solve": {
+                    "Solver": "",
+                    "SolveMedia": [
+                        {
+                            "Code": "VIDEO",
+                            "Name": "Video",
+                            "Icon": "play",
+                            "Url": "",
+                            "Check": false
+                        },
+                        {
+                            "Code": "IMAGE",
+                            "Name": "Image",
+                            "Icon": "image",
+                            "Url": "title_img",
+                            "Check": false
+                        },
+                        {
+                            "Code": "VOICE",
+                            "Name": "Voice",
+                            "Icon": "microphone-alt",
+                            "Url": "",
+                            "Check": false
+                        }
+                    ]
+                },
+                "QuestionMedia": [
+                    {
+                        "Code": "VIDEO",
+                        "Name": "Video",
+                        "Icon": "play",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:55"
+                    },
+                    {
+                        "Code": "IMAGE",
+                        "Name": "Image",
+                        "Icon": "image",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:56"
+                    },
+                    {
+                        "Code": "VOICE",
+                        "Name": "Voice",
+                        "Icon": "microphone-alt",
+                        "Url": "",
+                        "Check": false,
+                        "$$hashKey": "object:57"
+                    }
+                ],
+                "Code": "b8fbd5ff-9854-499e-a230-d84a9a838ee8",
+                "Type": "QUIZ_SING_CH",
+                "AnswerData": [
+                    {
+                        "Code": "71ba0fdb-0306-4ed9-ac4f-8fd66c51a5b5",
+                        "Answer": "A. $-4 \\mathrm{~m} / \\mathrm{s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "A. $-4 \\mathrm{~m} / \\mathrm{s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "e5ddb56a-201d-4867-9b7d-72530b1520ec",
+                        "Answer": "B. $-1 \\mathrm{~m} / \\mathrm{s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "B. $-1 \\mathrm{~m} / \\mathrm{s}$.\\\\",
+                        "IsAnswer": false
+                    },
+                    {
+                        "Code": "933e277d-aeec-4d18-b59a-85b49d0fd7a6",
+                        "Answer": "C. $2 \\mathrm{~m} / \\mathrm{s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "C. $2 \\mathrm{~m} / \\mathrm{s}$.\\\\",
+                        "IsAnswer": true
+                    },
+                    {
+                        "Code": "7ea19eab-b838-435e-9809-eb5626ba0bd5",
+                        "Answer": "D. $2,5 \\mathrm{~m} / \\mathrm{s}$.",
+                        "Type": "TEXT",
+                        "ContentDecode": "D. $2,5 \\mathrm{~m} / \\mathrm{s}$.",
+                        "IsAnswer": false
+                    }
+                ],
+                "IdQuiz": 75,
+                "UserChoose": null
+            }
+        ]
+    },
+    "Code": "77f74631-4c3d-454a-a12b-1c652a8ae47d",
+    "FilePath": ""
+}
