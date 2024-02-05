@@ -22,4 +22,5 @@ urlpatterns = [
     path("polls/", include("polls.urls")),
     ##app admin(login, manage)
     path('admin/', admin.site.urls),
+    
 ]

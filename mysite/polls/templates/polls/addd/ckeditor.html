@@ -4,6 +4,7 @@
     <script src="https://cdn.ckeditor.com/ckeditor5/41.0.0/classic/ckeditor.js"></script> 
 </head>
 <body>
+    
     <textarea id="editor"></textarea>
     <div id="content1">
         <p id="question1">Câu 1: Một chất điêm chuyển động thẳng đêu, với đồ thị vận tốc - thời gian được cho như hình vẽ. ![original image](https://cdn.mathpix.com/snip/images/ChLIECR1_i77DC5RUDYbTDMXlPyC9AYPzkVmVe_nNjI.original.fullsize.png) Quãng đường mà chất điểm đi được trong khoảng thời gian từ $1 \mathrm{~s}$ đến $2 \mathrm{~s}$ là:</p>
@@ -26,7 +27,12 @@
     </div>
     <script>
     ClassicEditor
-        .create(document.querySelector('#editor'))
+        .create(document.querySelector('#editor'), {
+            // Cấu hình tải lên hình ảnh
+            ckfinder: {
+                uploadUrl: 'ckeditor/upload/'
+            }
+        })
         .then(editor => {
             // Button "Get Data" click event
 			

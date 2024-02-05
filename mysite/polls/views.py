@@ -1,7 +1,11 @@
 import json
 import os
+from django.conf import settings
 from django.shortcuts import render
 from django.http import HttpResponse
+from django.http import JsonResponse
+
+
 # Create your views here.
 
 # view1 return  hello in web browser using template
@@ -32,3 +36,23 @@ def jsonFileT(request):
     with open(json_file_path) as file:
         data = json.load(file)
     return render(request, "polls/addd/ckeditor.html", {"data": json.dumps(data, ensure_ascii=True)})"""
+from django.views.decorators.csrf import csrf_exempt
+
+@csrf_exempt
+def upload_image(request):
+    if request.method == 'POST' and request.FILES.get('upload'):
+        image = request.FILES['upload']
+        # Lưu trữ hình ảnh trong thư mục tải lên trên máy chủ
+        upload_path = os.path.join(settings.MEDIA_ROOT, 'uploads')
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+        image_path = os.path.join(upload_path, image.name)
+        with open(image_path, 'wb') as f:
+            for chunk in image.chunks():
+                f.write(chunk)
+        
+        # Trả về URL của hình ảnh đã tải lên
+        image_url = settings.MEDIA_URL + 'uploads/' + image.name
+        return JsonResponse({'url': image_url})
+    
+    return JsonResponse({'error': 'Invalid request'})

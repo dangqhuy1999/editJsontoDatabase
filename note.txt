@@ -236,10 +236,159 @@ AH, NẾU BẠN ĐANG MUỐN XỬ LÝ URL VỚI MỐI QUAN HỆ CHA-CON TRONG DJ
 	Bây giờ, khi bạn truy cập vào URL 'parent/', Django sẽ gọi view parent_view và trả về phản hồi "This is the parent view". Tương tự, khi bạn truy cập vào URL 'parent/child/', Django sẽ gọi view child_view và trả về phản hồi "This is the child view".
 
 #####################
-SETTING CKEDITOR UPLOAD IMAGES
+SETTING CKEDITOR UPLOAD IMAGES in CDN DJANGO
 	settings.py
 	CKEDITOR_UPLOAD_PATH = "uploads/"
 	STATIC_URL = '/static/'
 	STATIC_ROOT = 'static/'
 	MEDIA_URL = '/media/'
 	MEDIA_ROOT = 'media/'
+#####################
+SETTING CKEDITOR UPLOAD IMAGES CDN in VIEWS DJANGO, intergrate along with HTML file.
+Nếu bạn đã tích hợp CKEditor vào HTML của mình bằng mã JavaScript như bạn đã đề cập, bạn có thể làm như sau để tải lên hình ảnh từ CKEditor:
+
+Tạo một view Django để xử lý việc tải lên hình ảnh:
+
+//
+settings.py
+	STATIC_URL = '/static/'
+	STATIC_ROOT = 'static/'
+	MEDIA_URL = '/media/'
+	MEDIA_ROOT = 'media/'
+//
+Trong file views.py, tạo một view để xử lý việc tải lên hình ảnh từ CKEditor:
+views.py
+def upload_image(request):
+    if request.method == 'POST' and request.FILES.get('upload'):
+        image = request.FILES['upload']
+        # Lưu trữ hình ảnh trong thư mục tải lên trên máy chủ
+        upload_path = os.path.join(settings.MEDIA_ROOT, 'uploads')
+        if not os.path.exists(upload_path):
+            os.makedirs(upload_path)
+        image_path = os.path.join(upload_path, image.name)
+        with open(image_path, 'wb') as f:
+            for chunk in image.chunks():
+                f.write(chunk)
+        
+        # Trả về URL của hình ảnh đã tải lên
+        image_url = settings.MEDIA_URL + 'uploads/' + image.name
+        return JsonResponse({'url': image_url})
+    
+    return JsonResponse({'error': 'Invalid request'})
+
+
+
+Trong view trên, chúng ta xử lý việc tải lên hình ảnh từ CKEditor. Bạn cần thay đổi phần xử lý lưu trữ hình ảnh vào CDN tại dòng mã được chú thích bằng mã xử lý tương ứng cho CDN bạn đang sử dụng. Sau đó, trả về URL của hình ảnh đã tải lên dưới dạng JSON.
+
+Cấu hình URL cho việc tải lên hình ảnh:
+//
+Trong file urls.py, thêm đường dẫn URL để xử lý việc tải lên hình ảnh từ CKEditor:
+urls.py
+from . import views
+
+urlpatterns = [
+    # ...
+    path('ckeditor/upload/', views.upload_image, name='ckeditor_upload'),
+]
+
+Trong ví dụ trên, chúng ta đã thêm một URL với đường dẫn 'ckeditor/upload/' để xử lý việc tải lên hình ảnh từ CKEditor. Bạn cần cập nhật đường dẫn URL tương ứng với cấu hình của mình.
+
+//
+Xử lý sự kiện tải lên hình ảnh trong CKEditor:
+
+Trong mã JavaScript của bạn, bạn cần xử lý sự kiện tải lên hình ảnh từ CKEditor. Bạn có thể sử dụng phương thức editor.plugins.get('FileRepository').createUploadAdapter() để xác định cách tải lên hình ảnh và cấu hình endpoint URL tải lên hình ảnh. Dưới đây là một ví dụ:
+
+javascript
+Copier
+ClassicEditor
+    .create(document.querySelector('#editor'), {
+        // Cấu hình tải lên hình ảnh
+        ckfinder: {
+            uploadUrl: '/ckeditor/upload/'  // Đường dẫn URL đến view Django để xử lý tải lên hình ảnh
+        }
+    })
+    .then(editor => {
+        console.log('Editor was initialized', editor);
+    })
+    .catch(error => {
+        console.error(error.stack);
+    });
+Trong ví dụ trên, chúng ta đã cấu hình uploadUrl trong ckfinder để trỏ đến đường dẫn URL của view Django đã tạo trong bước trước.
+
+Cập nhật template để sử dụng CKEditor:
+
+Trong template của bạn, hãy đảm bảo rằng bạn đã bao gồm thư viện CKEditor và tạo một phần tử HTML với id editor để CKEditor có thể được khởi tạo:
+
+html
+Copier
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Your Page Title</title>
+    <script src="https://cdn.ckeditor.com/ckeditor5/30.0.0/classic/ckeditor.js"></script>
+</head>
+<body>
+    <textarea id="editor"></textarea>
+    <script>
+        ClassicEditor
+            .create(document.querySelector('#editor'), {
+                // Cấu hìnhtải lên hình ảnh
+                ckfinder: {
+                    uploadUrl: '/ckeditor/upload/'  // Đường dẫn URL đến view Django để xử lý tải lên hình ảnh
+                }
+            })
+            .then(editor => {
+                console.log('Editor was initialized', editor);
+            })
+            .catch(error => {
+                console.error(error.stack);
+            });
+    </script>
+</body>
+</html>
+Trong ví dụ trên, chúng ta đã đảm bảo rằng thư viện CKEditor được bao gồm từ đường dẫn CDN. Đồng thời, chúng ta đã tạo một phần tử <textarea> với id editor để CKEditor có thể được khởi tạo.
+
+Sau khi bạn đã cấu hình và triển khai các bước trên, bạn sẽ có khả năng tải lên hình ảnh từ CKEditor thông qua view Django đã tạo. Hình ảnh sẽ được xử lý và lưu trữ dựa trên cấu hình CDN của bạn và URL của hình ảnh tải lên sẽ được trả về cho CKEditor để hiển thị trong nội dung văn bản.
+#############
+#################
+Lỗi 403
+	Lỗi "Forbidden (CSRF token missing or incorrect)" xuất hiện khi Django bảo vệ chống tấn công CSRF (Cross-Site Request Forgery) và không tìm thấy hoặc không chính xác CSRF token trong yêu cầu.
+
+	CSRF token là một giá trị duy nhất được tạo ra bởi Django và được gắn vào mỗi yêu cầu POST để xác thực rằng yêu cầu đó là hợp lệ và không bị tấn công CSRF.
+
+	Để khắc phục lỗi này, bạn có thể áp dụng một trong các phương pháp sau:
+
+	Sử dụng decorators csrf_exempt: Bạn có thể bỏ qua bảo vệ CSRF cho view ckeditor_upload bằng cách sử dụng decorator csrf_exempt. Tuy nhiên, điều này có thể làm giảm mức độ bảo mật của ứng dụng của bạn, nên chỉ sử dụng khi bạn đã có các biện pháp bảo mật khác đáng tin cậy.
+	python
+	Copier
+	from django.views.decorators.csrf import csrf_exempt
+
+	@csrf_exempt
+	def ckeditor_upload(request):
+		# Code xử lý tải lên hình ảnh
+	Đăng ký CSRF token trong yêu cầu: Bạn có thể đăng ký CSRF token trong yêu cầu tải lên bằng cách thêm mã JavaScript vào trang của bạn. Điều này yêu cầu bạn sửa đổi mã JavaScript của CKEditor để gắn kết CSRF token vào yêu cầu tải lên.
+	html
+	Copier
+	<script>
+		// Đăng ký CSRF token trong yêu cầu tải lên
+		ClassicEditor
+			.create(document.querySelector('#editor'), {
+				ckfinder: {
+					uploadUrl: '/polls/addd/ckeditor/upload/',
+					headers: {
+						'X-CSRFToken': '{{ csrf_token }}'
+					}
+				}
+			})
+			.then(editor => {
+				console.log('Editor was initialized', editor);
+			})
+			.catch(error => {
+				console.error(error.stack);
+			});
+	</script>
+	Trong ví dụ trên, {{ csrf_token }} sẽ được thay thế bằng CSRF token cụ thể trong template Django.
+
+	Lưu ý rằng việc sử dụng CSRF token là một biện pháp bảo mật quan trọng để ngăn chặn các cuộc tấn công CSRF. Vì vậy, nếu bạn không sử dụng decorator csrf_exempt, hãy đảm bảo rằng bạn đã áp dụng CSRF token đúng cách trong yêu cầu tải lên.
+############//

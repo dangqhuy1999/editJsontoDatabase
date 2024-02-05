@@ -6,5 +6,6 @@ urlpatterns = [
     path('addd/', include([
         path('', views.haft, name="haft"),
         path('jsonFile/', views.jsonFileT, name="jsonFileT"),
+        path('ckeditor/upload/', views.upload_image, name='ckeditor_upload'),
     ])),
 ]
